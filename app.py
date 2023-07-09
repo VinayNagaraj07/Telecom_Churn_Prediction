@@ -21,8 +21,10 @@ if __name__ == "__main__":
     st.title("Customer Churn Prediction")
 
     account_length=st.number_input("Customer Active Since(Months)", 0, 1200)
-
-    area_code=st.selectbox(
+    st.markdown("<p style='font-size: 22px;'>Customer Location Details</p>", unsafe_allow_html=True)
+    st.header('Customer Location Details')
+    col1, col2 = st.columns(2)
+    area_code=col1.selectbox(
             "Area Code",
             ['area_code_408', 
             'area_code_415', 
@@ -30,7 +32,7 @@ if __name__ == "__main__":
             index=0,
         )
 
-    state=st.selectbox(
+    state=col2.selectbox(
             "State",
             ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 
             'CT', 'DC', 'DE', 'FL', 'GA', 'HI', 'IA', 
@@ -41,27 +43,32 @@ if __name__ == "__main__":
             'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY'],
             index=0,
         )
-    
-
-    voice_plan=st.selectbox("Has Voice plan?", ["No", "Yes"], index=0)
-    voice_messages=st.number_input("Total Voice messages", 0.0, 1200.0)
+    st.header('Voice Plan Details')
+    col1, col2 = st.columns(2)
+    voice_plan=col1.selectbox("Has Voice plan?", ["No", "Yes"], index=0)
+    voice_messages=col2.number_input("Total Voice messages", 0.0, 1200.0)
     intl_plan=st.selectbox("Has International plan?", ["No", "Yes"], index=0)
     churn='no'
-    intl_mins=st.number_input("Total International Minutes", 0.0, 1200.0)
-    intl_calls=st.number_input("Total International Calls", 0, 1200)
-    intl_charge=st.number_input("International Charges", 0.0, 1200.0)
-
-    day_mins=st.number_input("Total Day Minutes", 0.0, 1200.0)
-    day_calls=st.number_input("Total Day Calls", 0, 1200)
-    day_charge=st.number_input("Day Charges", 0.0, 1200.0)
-
-    eve_mins=st.number_input("Total Evening Minutes", 0.0, 1200.0)
-    eve_calls=st.number_input("Total Evening Calls", 0, 1200)
-    eve_charge=st.number_input("Evening Charges", 0.0, 1200.0)
-
-    night_mins=st.number_input("Total Night Minutes", 0.0, 1200.0)
-    night_calls=st.number_input("Total Night Calls", 0, 1200)
-    night_charge=st.number_input("Night Charges", 0.0, 1200.0)
+    st.write('International Calls Details')
+    col1, col2,col3 = st.columns(3)
+    intl_mins=col1.number_input("Total International Minutes", 0.0, 1200.0)
+    intl_calls=col2.number_input("Total International Calls", 0, 1200)
+    intl_charge=col3.number_input("International Charges", 0.0, 1200.0)
+    st.write('Day Calls Details')
+    col1, col2,col3 = st.columns(3)
+    day_mins=col1.number_input("Total Day Minutes", 0.0, 1200.0)
+    day_calls=col2.number_input("Total Day Calls", 0, 1200)
+    day_charge=col3.number_input("Day Charges", 0.0, 1200.0)
+    st.write('Day Evening Details')
+    col1, col2,col3 = st.columns(3)
+    eve_mins=col1.number_input("Total Evening Minutes", 0.0, 1200.0)
+    eve_calls=col2.number_input("Total Evening Calls", 0, 1200)
+    eve_charge=col3.number_input("Evening Charges", 0.0, 1200.0)
+    st.write('Day Night Details')
+    col1, col2,col3 = st.columns(3)
+    night_mins=col1.number_input("Total Night Minutes", 0.0, 1200.0)
+    night_calls=col2.number_input("Total Night Calls", 0, 1200)
+    night_charge=col3.number_input("Night Charges", 0.0, 1200.0)
 
     customer_calls=st.number_input("Called Customer Care for?", 0, 12)
 
