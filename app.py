@@ -6,6 +6,7 @@ from streamlit_modal import Modal
 import matplotlib.pyplot as plt
 import seaborn as sns
 from PIL import Image
+from sklearn.ensemble import GradientBoostingClassifier
 st.set_option('deprecation.showPyplotGlobalUse', False)
 with open("label_categorical.pkl", "rb") as file:
     label_categorical = pickle.load(file)
