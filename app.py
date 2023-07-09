@@ -123,7 +123,7 @@ if modal.is_open():
 			st.markdown(html_table, unsafe_allow_html=True)
 		if col2.button('Confusion Matrix','Confusion Matrix'):
 			st.write("Confusion Matrix of Trained Model")
-			categories = ['figurative', 'irony', 'regular', 'sarcasm']
+			categories = ['No', 'Yes']
 			plt.figure(figsize=(7, 5))
 			df_cm=pd.read_csv('Confusion Matrix.csv')
 			df_cm.index=['No', 'Yes']
