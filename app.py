@@ -5,7 +5,7 @@ import numpy as np
 from streamlit_modal import Modal
 import matplotlib.pyplot as plt
 import seaborn as sns
-
+st.set_option('deprecation.showPyplotGlobalUse', False)
 with open("label_categorical.pkl", "rb") as file:
     label_categorical = pickle.load(file)
 
