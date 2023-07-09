@@ -125,7 +125,7 @@ if modal.is_open():
 		if col2.button('Confusion Matrix','Confusion Matrix'):
 			st.write("Confusion Matrix of Trained Model")
 			categories = ['No', 'Yes']
-			plt.figure(figsize=(4, 3))
+			#plt.figure(figsize=(4, 3))
 			df_cm=pd.read_csv('Confusion Matrix.csv')
 			df_cm.index=['No', 'Yes']
 			sns.heatmap(df_cm, annot=True,cmap = 'Blues',fmt = '.1f',xticklabels = categories, yticklabels = categories)
