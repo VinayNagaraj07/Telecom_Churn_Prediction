@@ -1,4 +1,4 @@
-class,precision,recall,f1-score,support
+Churn,precision,recall,f1-score,support
 No,1.00,1.00,1.00,4293
 Yes,0.98,0.98,0.97,707
 
