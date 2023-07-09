@@ -141,7 +141,7 @@ if modal.is_open():
 			else:
 				st.write("No Words to Plot")
 		
-		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
+		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Telecom_Churn_Prediction)")
 		
 st.markdown('''
     ## Disclaimer
