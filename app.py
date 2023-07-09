@@ -19,9 +19,9 @@ with open("normalizer.pkl", "rb") as file:
 
 if __name__ == "__main__":
     st.title("Customer Churn Prediction")
-
+    st.markdown("<p style='font-size: 24px;font-weight: bold;'>Customer Tenure</p>", unsafe_allow_html=True)
     account_length=st.number_input("Customer Active Since(Months)", 0, 1200)
-    st.markdown("<p style='font-size: 22px;'>Customer Location Details</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 24px;font-weight: bold;'>Customer Location</p>", unsafe_allow_html=True)
     col1, col2 = st.columns(2)
     area_code=col1.selectbox(
             "Area Code",
@@ -42,34 +42,35 @@ if __name__ == "__main__":
             'UT', 'VA', 'VT', 'WA', 'WI', 'WV', 'WY'],
             index=0,
         )
-    st.markdown("<p style='font-size: 22px;'>Customer Location Details</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 24px;font-weight: bold;'>Voice Plan</p>", unsafe_allow_html=True)
     col1, col2 = st.columns(2)
     voice_plan=col1.selectbox("Has Voice plan?", ["No", "Yes"], index=0)
     voice_messages=col2.number_input("Total Voice messages", 0.0, 1200.0)
-    intl_plan=st.selectbox("Has International plan?", ["No", "Yes"], index=0)
+    #intl_plan=st.selectbox("Has International plan?", ["No", "Yes"], index=0)
     churn='no'
 	
-    st.markdown("<p style='font-size: 22px;'>Customer Location Details</p>", unsafe_allow_html=True)
-    col1, col2,col3 = st.columns(3)
-    intl_mins=col1.number_input("Total International Minutes", 0.0, 1200.0)
-    intl_calls=col2.number_input("Total International Calls", 0, 1200)
-    intl_charge=col3.number_input("International Charges", 0.0, 1200.0)
-    st.markdown("<p style='font-size: 22px;'>Customer Location Details</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 24px;font-weight: bold;'>International Calls Details</p>", unsafe_allow_html=True)
+    col1, col2,col3,col4 = st.columns(4)
+    intl_plan=col1.selectbox("Has International plan?", ["No", "Yes"], index=0)
+    intl_mins=col2.number_input("Total International Minutes", 0.0, 1200.0)
+    intl_calls=col3.number_input("Total International Calls", 0, 1200)
+    intl_charge=col4.number_input("International Charges", 0.0, 1200.0)
+    st.markdown("<p style='font-size: 24px;font-weight: bold;'>Day Calls Details</p>", unsafe_allow_html=True)
     col1, col2,col3 = st.columns(3)
     day_mins=col1.number_input("Total Day Minutes", 0.0, 1200.0)
     day_calls=col2.number_input("Total Day Calls", 0, 1200)
     day_charge=col3.number_input("Day Charges", 0.0, 1200.0)
-    st.markdown("<p style='font-size: 22px;'>Customer Location Details</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 24px;font-weight: bold;'>Evening Calls Details</p>", unsafe_allow_html=True)
     col1, col2,col3 = st.columns(3)
     eve_mins=col1.number_input("Total Evening Minutes", 0.0, 1200.0)
     eve_calls=col2.number_input("Total Evening Calls", 0, 1200)
     eve_charge=col3.number_input("Evening Charges", 0.0, 1200.0)
-    st.markdown("<p style='font-size: 22px;'>Customer Location Details</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 24px;font-weight: bold;'>Night Calls Details</p>", unsafe_allow_html=True)
     col1, col2,col3 = st.columns(3)
     night_mins=col1.number_input("Total Night Minutes", 0.0, 1200.0)
     night_calls=col2.number_input("Total Night Calls", 0, 1200)
     night_charge=col3.number_input("Night Charges", 0.0, 1200.0)
-    st.markdown("<p style='font-size: 22px;'>Customer Location Details</p>", unsafe_allow_html=True)
+    st.markdown("<p style='font-size: 24px;font-weight: bold;'>Customer-Company Interaction</p>", unsafe_allow_html=True)
     customer_calls=st.number_input("Called Customer Care for?", 0, 12)
 
 
