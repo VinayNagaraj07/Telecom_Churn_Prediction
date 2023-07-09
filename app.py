@@ -138,7 +138,7 @@ if modal.is_open():
 			if col4.button('Original Data','Original Data'):
 				image = Image.open('Original_data.png')
 				st.image(image, caption='Original_data')
-			if col4.button('Model Prediction','Model Prediction'):
+			if col5.button('Model Prediction','Model Prediction'):
 				image = Image.open('Model_Prediction.png')
 				st.image(image, caption='Model_Prediction')
 		
