@@ -5,6 +5,7 @@ import numpy as np
 from streamlit_modal import Modal
 import matplotlib.pyplot as plt
 import seaborn as sns
+from PIL import Image
 st.set_option('deprecation.showPyplotGlobalUse', False)
 with open("label_categorical.pkl", "rb") as file:
     label_categorical = pickle.load(file)
@@ -132,16 +133,11 @@ if modal.is_open():
 			plt.ylabel("Actual values" , fontdict = {'size':14}, labelpad = 10)
 			plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
 			st.pyplot()
-		if col3.button('Word Cloud','Word Cloud'):
-			if (text2!=""):
-				wordcloud = WordCloud(width=800, height=400).generate(text)
-				st.title('Word Cloud')
-				plt.figure(figsize=(7, 5))
-				plt.imshow(wordcloud, interpolation='bilinear')
-				plt.axis('off')
-				st.pyplot(plt)
-			else:
-				st.write("No Words to Plot")
+		if col3.button('Visualization','Visualization'):
+			image = Image.open('Original_data.png')
+			st.image(image, caption='Original_data')
+			image = Image.open('Model_Prediction.png')
+			st.image(image, caption='Model_Prediction')
 		
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Telecom_Churn_Prediction)")
 		
