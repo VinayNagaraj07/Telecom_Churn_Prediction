@@ -4,6 +4,7 @@ import streamlit as st
 import numpy as np
 from streamlit_modal import Modal
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 with open("label_categorical.pkl", "rb") as file:
     label_categorical = pickle.load(file)
