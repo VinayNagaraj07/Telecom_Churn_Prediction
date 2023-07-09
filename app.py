@@ -134,10 +134,11 @@ if modal.is_open():
 			plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
 			st.pyplot()
 		if col3.button('Visualization','Visualization'):
+			col4, col5 = st.columns(3)
 			image = Image.open('Original_data.png')
-			st.image(image, caption='Original_data')
+			col4.image(image, caption='Original_data')
 			image = Image.open('Model_Prediction.png')
-			st.image(image, caption='Model_Prediction')
+			col5.image(image, caption='Model_Prediction')
 		
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Telecom_Churn_Prediction)")
 		
