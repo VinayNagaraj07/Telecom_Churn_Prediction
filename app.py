@@ -135,10 +135,12 @@ if modal.is_open():
 			st.pyplot()
 		if col3.button('Visualization','Visualization'):
 			col4, col5 = st.columns(2)
-			image = Image.open('Original_data.png')
-			col4.image(image, caption='Original_data')
-			image = Image.open('Model_Prediction.png')
-			col5.image(image, caption='Model_Prediction')
+			if col4.button('Original_data','Original_data'):
+				image = Image.open('Original_data.png')
+				st.image(image, caption='Original_data')
+			if col4.button('Original_data','Original_data'):
+				image = Image.open('Model_Prediction.png')
+				st.image(image, caption='Model_Prediction')
 		
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Telecom_Churn_Prediction)")
 		
