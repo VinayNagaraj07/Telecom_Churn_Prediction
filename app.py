@@ -2,6 +2,7 @@ import pickle
 import pandas as pd
 import streamlit as st
 import numpy as np
+from streamlit_modal import Modal
 
 with open("label_categorical.pkl", "rb") as file:
     label_categorical = pickle.load(file)
