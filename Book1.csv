@@ -1,0 +1,9 @@
+class,precision,recall,f1-score,support
+No,1.00,1.00,1.00,4293
+Yes,0.98,0.98,0.97,707
+
+,,,,
+,,Overall Report,,
+accuracy,,,0.99,5000
+macro avg,0.99,0.98,0.99,5000
+weighted avg,0.99,0.98,0.99,5000
