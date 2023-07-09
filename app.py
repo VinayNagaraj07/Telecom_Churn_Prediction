@@ -125,7 +125,7 @@ if modal.is_open():
 			categories = ['figurative', 'irony', 'regular', 'sarcasm']
 			plt.figure(figsize=(7, 5))
 			df_cm=pd.read_csv('Confusion Matrix.csv')
-			df_cm.index=['figurative', 'irony', 'regular', 'sarcasm']
+			df_cm.index=['No', 'Yes']
 			sns.heatmap(df_cm, annot=True,cmap = 'Blues',fmt = '.1f',xticklabels = categories, yticklabels = categories)
 			plt.xlabel("Predicted values", fontdict = {'size':14}, labelpad = 10)
 			plt.ylabel("Actual values" , fontdict = {'size':14}, labelpad = 10)
