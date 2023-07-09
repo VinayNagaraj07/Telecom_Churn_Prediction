@@ -96,3 +96,56 @@ if __name__ == "__main__":
             st.title("Not Likely to Churn")
             prob=np.round(model.predict_proba(input_df)[:,0],3)[0]
             st.write('The probability percentage is',str(np.round(prob*100,2)),'%')
+
+button=st.button("Stats For Nerd")	
+modal = Modal("Stats For Nerd","black")
+
+if button:
+    modal.open()
+import streamlit.components.v1 as components
+if modal.is_open():
+	
+	with modal.container():
+		#st.write("Prediction Model Used - Support Vector Classification (SVC)")
+		#st.write("Word Embedding done Using - Pre-Trained Glove")
+		#button1=st.button("Classification Report")
+		col1, col2,col3 = st.columns(3)
+		if col1.button('Classification Report','Classification Report'):
+			st.write("Classification Report of Trained Model")
+			book1=pd.read_csv("Book1.csv")
+			book1.replace(np.NaN,"",inplace=True)
+			#book1 = book1.style.set_properties(**{'text-align': 'center'})
+			html_table = book1.to_html(index=False)
+			html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
+			st.markdown(html_table, unsafe_allow_html=True)
+		if col2.button('Confusion Matrix','Confusion Matrix'):
+			st.write("Confusion Matrix of Trained Model")
+			categories = ['figurative', 'irony', 'regular', 'sarcasm']
+			plt.figure(figsize=(7, 5))
+			df_cm=pd.read_csv('Confusion Matrix.csv')
+			df_cm.index=['figurative', 'irony', 'regular', 'sarcasm']
+			sns.heatmap(df_cm, annot=True,cmap = 'Blues',fmt = '.1f',xticklabels = categories, yticklabels = categories)
+			plt.xlabel("Predicted values", fontdict = {'size':14}, labelpad = 10)
+			plt.ylabel("Actual values" , fontdict = {'size':14}, labelpad = 10)
+			plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
+			st.pyplot()
+		if col3.button('Word Cloud','Word Cloud'):
+			if (text2!=""):
+				wordcloud = WordCloud(width=800, height=400).generate(text)
+				st.title('Word Cloud')
+				plt.figure(figsize=(7, 5))
+				plt.imshow(wordcloud, interpolation='bilinear')
+				plt.axis('off')
+				st.pyplot(plt)
+			else:
+				st.write("No Words to Plot")
+		
+		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Twitter-Sentiment-Analysis)")
+		
+st.markdown('''
+    ## Disclaimer
+    
+    This Predictions are made from training on a specific Dataset only and for it is to be used solely learning purposes only. Please consult with a qualified professional before making any decisions.
+    
+    ---
+    ''')
