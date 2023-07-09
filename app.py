@@ -134,7 +134,7 @@ if modal.is_open():
 			plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
 			st.pyplot()
 		if col3.button('Visualization','Visualization'):
-			col4, col5 = st.columns(3)
+			col4, col5 = st.columns(2)
 			image = Image.open('Original_data.png')
 			col4.image(image, caption='Original_data')
 			image = Image.open('Model_Prediction.png')
