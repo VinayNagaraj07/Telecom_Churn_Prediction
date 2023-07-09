@@ -3,6 +3,7 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 from streamlit_modal import Modal
+import matplotlib.pyplot as plt
 
 with open("label_categorical.pkl", "rb") as file:
     label_categorical = pickle.load(file)
