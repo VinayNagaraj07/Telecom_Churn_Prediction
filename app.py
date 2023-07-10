@@ -177,7 +177,7 @@ if __name__ == "__main__":
             st.title("Not Likely to Churn")
             prob=np.round(model.predict_proba(input_df)[:,0],3)[0]
             st.write('The probability percentage is',str(np.round(prob*100,2)),'%')
- if st.button('Visualization','Visualization'):
+ if st.button('Dashboard for Trained Data'):
 	#col4, col5 = st.columns(2)
 	# Display the first image in the first column
 		#image1 = 'Original_data.png'
