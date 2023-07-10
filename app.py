@@ -178,11 +178,12 @@ if __name__ == "__main__":
             prob=np.round(model.predict_proba(input_df)[:,0],3)[0]
             st.write('The probability percentage is',str(np.round(prob*100,2)),'%')
  if st.button('Dashboard for Trained Data'):
+	 visualize()
 	#col4, col5 = st.columns(2)
 	# Display the first image in the first column
 	#image1 = 'Original_data.png'
 	#col4.image(image1, use_column_width=True)
-	visualize()
+	
 	# Display the second image in the second column
 	#image2 = 'Model_Prediction.png'
 	#col5.image(image2, use_column_width=True)
