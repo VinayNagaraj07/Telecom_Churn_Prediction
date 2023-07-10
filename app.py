@@ -20,7 +20,7 @@ def calculate_months(start_date, end_date):
 start_date = date(2021, 1, 1)
 end_date = date(2023, 7, 1)
 months = calculate_months(start_date, end_date)
-st.write(f"Months between the dates: {months}")
+st.write(months)
 
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
