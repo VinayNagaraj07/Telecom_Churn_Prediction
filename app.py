@@ -10,6 +10,48 @@ from sklearn.ensemble import GradientBoostingClassifier
 from dateutil import relativedelta
 from datetime import date
 join_date=""
+
+def visualize():
+    tableau_embed_code = """
+    <div class='tableauPlaceholder' id='viz1688978306165' style='position: relative'>
+        <noscript>
+            <a href='#'>
+                <img alt='Dashboard 1' src='https://public.tableau.com/static/images/25/255_Dashboard/Dashboard1/1_rss.png' style='border: none' />
+            </a>
+        </noscript>
+        <object class='tableauViz' style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+            <param name='embed_code_version' value='3' />
+            <param name='site_root' value='' />
+            <param name='name' value='255_Dashboard/Dashboard1' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+            <param name='static_image' value='https://public.tableau.com/static/images/25/255_Dashboard/Dashboard1/1.png' />
+            <param name='animate_transition' value='yes' />
+            <param name='display_static_image' value='yes' />
+            <param name='display_spinner' value='yes' />
+            <param name='display_overlay' value='yes' />
+            <param name='display_count' value='yes' />
+            <param name='language' value='en-US' />
+            <param name='filter' value='publish=yes' />
+        </object>
+    </div>
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1688978306165');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        var width = divElement.offsetWidth;
+        var height = width * 0.5;  // Adjust the aspect ratio (height/width) to fit your needs
+        
+        vizElement.style.width = width + 'px';
+        vizElement.style.height = height + 'px';
+
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+    """
+	st.components.v1.html(tableau_embed_code, height=800)
+
 def calculate_months(start_date, end_date):
     start = date(start_date.year, start_date.month, start_date.day)
     end = date(end_date.year, end_date.month, end_date.day)
@@ -166,14 +208,15 @@ if modal.is_open():
 			plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
 			st.pyplot()
 		if col3.button('Visualization','Visualization'):
-			col4, col5 = st.columns(2)
+			#col4, col5 = st.columns(2)
 			# Display the first image in the first column
-			image1 = 'Original_data.png'
-			col4.image(image1, use_column_width=True)
-			
+			#image1 = 'Original_data.png'
+			#col4.image(image1, use_column_width=True)
+			visualize()
 			# Display the second image in the second column
-			image2 = 'Model_Prediction.png'
-			col5.image(image2, use_column_width=True)
+			#image2 = 'Model_Prediction.png'
+			#col5.image(image2, use_column_width=True)
+			
 		
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Telecom_Churn_Prediction)")
 		
