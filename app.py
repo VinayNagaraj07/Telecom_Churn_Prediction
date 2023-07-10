@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
     if input_type == "Tenure (in months)":
         account_length = st.number_input("Enter Tenure (in months)", min_value=0)
-        st.write("Tenure (in months):", account_length)
+        st.write("Tenure (in months):", str(account_length))
     else:
         join_date = st.date_input("Select Joining Date",max_value=date.today())
     if join_date:
@@ -43,7 +43,7 @@ if __name__ == "__main__":
         start_date = join_date
         end_date = today
         account_length = calculate_months(start_date, end_date)
-        st.write("Tenure (in months):", type(account_length))	
+        st.write("Tenure (in months):", str(account_length))
     #account_length=col1.number_input("Customer Active Since(Months)", 0, 1200)
     user_date = col2.date_input("Enter a date")
 
