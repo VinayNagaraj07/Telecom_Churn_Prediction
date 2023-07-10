@@ -50,7 +50,7 @@ def visualize():
         vizElement.parentNode.insertBefore(scriptElement, vizElement);
     </script>
     """
-	st.components.v1.html(tableau_embed_code, height=800)
+    st.components.v1.html(tableau_embed_code, height=800)
 
 def calculate_months(start_date, end_date):
     start = date(start_date.year, start_date.month, start_date.day)
