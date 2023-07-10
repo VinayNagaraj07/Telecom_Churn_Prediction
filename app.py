@@ -207,8 +207,8 @@ if modal.is_open():
 			plt.ylabel("Actual values" , fontdict = {'size':14}, labelpad = 10)
 			plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
 			st.pyplot()
-		 if st.button('Dashboard for Trained Data'):
-	    		#visualize()
+		if col3.button('Dashboard for Trained Data'):
+			#visualize()
 			col4, col5 = st.columns(2)
 			# Display the first image in the first column
 			image1 = 'Original_data.png'
