@@ -7,6 +7,22 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from PIL import Image
 from sklearn.ensemble import GradientBoostingClassifier
+from dateutil import relativedelta
+from datetime import date
+
+def calculate_months(start_date, end_date):
+    start = date(start_date.year, start_date.month, start_date.day)
+    end = date(end_date.year, end_date.month, end_date.day)
+    delta = relativedelta.relativedelta(end, start)
+    return delta.years * 12 + delta.months
+
+# Example usage
+start_date = date(2021, 1, 1)
+end_date = date(2023, 7, 1)
+months = calculate_months(start_date, end_date)
+st.write(f"Months between the dates: {months}")
+
+
 st.set_option('deprecation.showPyplotGlobalUse', False)
 with open("label_categorical.pkl", "rb") as file:
     label_categorical = pickle.load(file)
