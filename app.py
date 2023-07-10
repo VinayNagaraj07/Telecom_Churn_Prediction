@@ -29,7 +29,7 @@ with open("normalizer.pkl", "rb") as file:
 
 if __name__ == "__main__":
     st.title("Customer Churn Prediction")
-    st.info('This app is created to predict Customer Churn')
+    st.info('This app is created to predict Customer Churn of a Telecom Company')
     st.markdown("<p style='font-size: 24px;font-weight: bold;'>Customer Tenure</p>", unsafe_allow_html=True)
     # Create a radio button to select input type
     input_type = st.radio("Select Input Type", ("Tenure (in months)", "Joining Date"))
