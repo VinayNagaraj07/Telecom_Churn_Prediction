@@ -130,11 +130,11 @@ if __name__ == "__main__":
         if model.predict(input_df)==1:
             st.title("Likely to Churn")
             prob=np.round(model.predict_proba(input_df)[:,1],3)[0]
-            st.write('The probability percentage is',str(np.round(prob*100,2)),'%')
+            st.header('The probability percentage is',str(np.round(prob*100,2)),'%')
         else:
             st.title("Not Likely to Churn")
-            prob=np.round(model.predict_proba(input_df)[:,1],3)[0]
-            st.write('The probability percentage is',str(np.round(prob*100,2)),'%')
+            prob=np.round(model.predict_proba(input_df)[:,0],3)[0]
+            st.header('The probability percentage is',str(np.round(prob*100,2)),'%')
 
 button=st.button("Stats For Nerd")	
 modal = Modal("Stats For Nerd","black")
