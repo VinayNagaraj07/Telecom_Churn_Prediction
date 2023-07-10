@@ -16,13 +16,6 @@ def calculate_months(start_date, end_date):
     delta = relativedelta.relativedelta(end, start)
     return delta.years * 12 + delta.months
 
-# Example usage
-start_date = date(2021, 1, 1)
-end_date = date(2023, 7, 1)
-months = calculate_months(start_date, end_date)
-st.write(months)
-
-
 st.set_option('deprecation.showPyplotGlobalUse', False)
 with open("label_categorical.pkl", "rb") as file:
     label_categorical = pickle.load(file)
