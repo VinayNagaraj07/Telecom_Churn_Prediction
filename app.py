@@ -177,6 +177,15 @@ if __name__ == "__main__":
             st.title("Not Likely to Churn")
             prob=np.round(model.predict_proba(input_df)[:,0],3)[0]
             st.write('The probability percentage is',str(np.round(prob*100,2)),'%')
+ if st.button('Visualization','Visualization'):
+	#col4, col5 = st.columns(2)
+	# Display the first image in the first column
+		#image1 = 'Original_data.png'
+		#col4.image(image1, use_column_width=True)
+		visualize()
+		# Display the second image in the second column
+		#image2 = 'Model_Prediction.png'
+		#col5.image(image2, use_column_width=True)
 
 button=st.button("Stats For Nerd")	
 modal = Modal("Stats For Nerd","black")
@@ -207,17 +216,6 @@ if modal.is_open():
 			plt.ylabel("Actual values" , fontdict = {'size':14}, labelpad = 10)
 			plt.title ("Confusion Matrix", fontdict = {'size':18}, pad = 20)
 			st.pyplot()
-		if col3.button('Visualization','Visualization'):
-			#col4, col5 = st.columns(2)
-			# Display the first image in the first column
-			#image1 = 'Original_data.png'
-			#col4.image(image1, use_column_width=True)
-			visualize()
-			# Display the second image in the second column
-			#image2 = 'Model_Prediction.png'
-			#col5.image(image2, use_column_width=True)
-			
-		
 		st.write("[Click Here to view complete GitHub Repository](https://github.com/VinayNagaraj07/Telecom_Churn_Prediction)")
 		
 st.markdown('''
