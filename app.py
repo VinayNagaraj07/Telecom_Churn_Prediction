@@ -37,11 +37,10 @@ with open("normalizer.pkl", "rb") as file:
 if __name__ == "__main__":
     st.title("Customer Churn Prediction")
     st.markdown("<p style='font-size: 24px;font-weight: bold;'>Customer Tenure</p>", unsafe_allow_html=True)
-    col1, col2,col3= st.columns(3)
+    col1, col2= st.columns(2)
 	
     account_length=col1.number_input("Customer Active Since(Months)", 0, 1200)
-    col2.write("(OR)")
-    user_date = col3.date_input("Enter a date")
+    user_date = col2.date_input("Enter a date")
 
     st.markdown("<p style='font-size: 24px;font-weight: bold;'>Customer Location</p>", unsafe_allow_html=True)
     col1, col2 = st.columns(2)
