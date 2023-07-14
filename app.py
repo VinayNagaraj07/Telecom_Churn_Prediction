@@ -178,10 +178,10 @@ if __name__ == "__main__":
                 Prediction=[]
                 for i in input_df["Prediction"]:
                     if i==1:
-                        Prediction_Proba.append(np.round(model.predict_proba(data)[j,1]*100,2))
+                        Prediction_Proba.append(str(np.round(model.predict_proba(data)[j,1]*100,2))+"%")
                         Prediction.append("Likely to Churn")
                     else:
-                        Prediction_Proba.append(np.round(model.predict_proba(data)[j,0]*100,2))
+                        Prediction_Proba.append(str(np.round(model.predict_proba(data)[j,0]*100,2))+"%")
                         Prediction.append("Not Likely to Churn")
                     j=j+1
 
