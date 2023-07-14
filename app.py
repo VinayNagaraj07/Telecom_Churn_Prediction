@@ -134,11 +134,11 @@ if __name__ == "__main__":
             if model.predict(input_df)==1:
                 st.title("Likely to Churn")
                 prob=np.round(model.predict_proba(input_df)[:,1],3)[0]
-                st.write('The probability percentage is',str(np.round(prob*100,2)),'%')
+                st.write('The probability percentage is',str(np.round(prob*100,3)),'%')
             else:
                 st.title("Not Likely to Churn")
                 prob=np.round(model.predict_proba(input_df)[:,0],3)[0]
-                st.write('The probability percentage is',str(np.round(prob*100,2)),'%')
+                st.write('The probability percentage is',str(np.round(prob*100,3)),'%')
     if add_selectbox=="Batch":
         st.markdown("<p style='font-size: 24px;font-weight: bold;'>File Should Contain Following Coloumns</p>", unsafe_allow_html=True)
         dummy_df=pd.DataFrame(columns=['state', 'area_code', 'voice_plan', 'intl_plan',
