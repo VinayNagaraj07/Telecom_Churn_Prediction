@@ -139,6 +139,15 @@ if __name__ == "__main__":
                 prob=np.round(model.predict_proba(input_df)[:,0],3)[0]
                 st.write('The probability percentage is',str(np.round(prob*100,2)),'%')
     if add_selectbox=="Batch":
+         st.title("File Should Contain Following Coloumns")
+        dummy_df=pd.DataFrame(columns=['state', 'area_code', 'voice_plan', 'intl_plan',
+           'account_length', 'voice_messages', 'intl_mins', 'intl_calls',
+           'intl_charge', 'day_mins', 'day_calls', 'day_charge', 'eve_mins',
+           'eve_calls', 'eve_charge', 'night_mins', 'night_calls', 'night_charge',
+           'customer_calls'])
+        html_table = dummy_df.to_html(index=False)
+        html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
+        st.markdown(html_table, unsafe_allow_html=True)
         file_upload = st.file_uploader("Upload csv file for predictions", type=["csv"])
         if file_upload is not None:
             data = pd.read_csv(file_upload)
@@ -176,9 +185,6 @@ if __name__ == "__main__":
 
                 input_df["Confidence"]=Prediction_Proba
                 input_df["Prediction"]=Prediction
-                #html_table = input_df.to_html(index=False)
-                #html_table = html_table.replace('<table', '<table style="border-collapse: collapse;"')
-                #st.markdown(html_table, unsafe_allow_html=True)
                 st.write(input_df)
 
 
